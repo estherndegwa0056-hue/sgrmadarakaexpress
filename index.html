@@ -18,35 +18,41 @@
         }
 
         /* ================= HEADER (TRANSLUCENT) ================= */
-        header {
-            background: rgba(177, 18, 38, 0.85);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            color: white;
-            padding: 22px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+      header {
+    background: rgba(177, 18, 38, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: white;
+    padding: 16px 24px;           /* reduced */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-        header h1 {
-            margin: 0;
-            font-size: 32px; /* increased */
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* heading left, nav right */
+}
 
-        nav {
-            margin-top: 12px;
-        }
+.branding .tagline {
+    margin: 0;
+    font-size: 20px;              /* reduced to fit one line */
+    font-weight: 600;
+}
 
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 18px; /* increased */
-        }
+nav {
+    margin-top: 0;                /* remove stacking */
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 18px;            /* spacing between tabs */
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;              /* reduced */
+}
 
         section {
             padding: 70px 20px;
@@ -346,6 +352,7 @@
 
 </body>
 </html>
+
 
 
 
