@@ -239,13 +239,6 @@ nav a {
         <p class="tagline">Kenya Railways — Right on Track</p>
     </div>
 
-    <nav>
-        <a onclick="scrollToSection('home')">Home</a>
-        <a onclick="scrollToSection('about')">About</a>
-        <a onclick="scrollToSection('booking')">Book Ticket</a>
-        <a onclick="scrollToSection('report')">Report Corruption</a>
-        <a onclick="scrollToSection('contact')">Contact Us</a>
-    </nav>
 </header>
 
 <section id="home" class="hero">
@@ -266,37 +259,45 @@ nav a {
 
 <section id="booking" class="booking">
     <div class="container">
-        <h2>Book Your Ticket</h2>
+        <div class="booking-tabs">
+    <button class="tab-btn active" onclick="showForm('madaraka')">
+        Madaraka Express
+    </button>
+    <button class="tab-btn" onclick="showForm('premium')">
+        Book Premium
+    </button>
+</div>
 
-        <form id="bookingForm">
-            <label>Full Name</label>
-            <input type="text" id="name" required>
+<div id="madaraka" class="booking-form active">
+    <form>
+        <label>Full Name</label>
+        <input type="text" required>
 
-            <label>Travel Route</label>
-            <select id="route" required>
-                <option>Nairobi – Mombasa</option>
-                <option>Mombasa – Nairobi</option>
-                <option>Nairobi – Kisumu</option>
-                <option>Mombasa – Voi</option>
-                <option>Nairobi – Kibwezi</option>
-                <option>Mombasa – Kibwezi</option>
-                <option>Nairobi – Voi</option>
-            </select>
+        <label>Travel Route</label>
+        <select required>
+            <option>Nairobi – Mombasa</option>
+            <option>Mombasa – Nairobi</option>
+            <option>Nairobi – Kisumu</option>
+            <option>Mombasa – Voi</option>
+            <option>Nairobi – Kibwezi</option>
+            <option>Mombasa – Kibwezi</option>
+            <option>Nairobi – Voi</option>
+        </select>
 
-            <label>Travel Date</label>
-            <input type="date" id="date" required>
+        <label>Travel Date</label>
+        <input type="date" required>
 
-            <label>Class</label>
-            <select id="class" required>
-                <option>Economy</option>
-                <option>First Class</option>
-            </select>
+        <label>Class</label>
+        <select required>
+            <option>Economy</option>
+            <option>First Class</option>
+        </select>
 
-            <button type="submit">Submit Booking</button>
-        </form>
-    </div>
-</section>
-
+        <button type="submit">Submit Booking</button>
+    </form>
+</div>
+    </section>
+        
 <section class="gallery">
     <div class="container">
         <h2>Our Rail Experience</h2>
@@ -360,6 +361,7 @@ nav a {
 
 </body>
 </html>
+
 
 
 
