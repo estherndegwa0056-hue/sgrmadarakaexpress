@@ -141,6 +141,31 @@ nav a {
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
+.booking-tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab-btn.active {
+    background: #b11226;
+    color: white;
+}
+
+.booking-form {
+    display: none;
+}
+
+.booking-form.active {
+    display: block;
+}
 
         .card {
             background: white;
@@ -296,6 +321,35 @@ nav a {
         <button type="submit">Submit Booking</button>
     </form>
 </div>
+
+
+        <div id="premium" class="booking-form">
+    <form>
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Trip Type</label>
+        <select required>
+            <option>One Way</option>
+            <option>Return Trip</option>
+        </select>
+
+        <label>Travel Route</label>
+        <select required>
+            <option>Nairobi – Mombasa</option>
+            <option>Mombasa – Nairobi</option>
+        </select>
+
+        <label>Departure Date</label>
+        <input type="date" required>
+
+        <label>Return Date (if return)</label>
+        <input type="date">
+
+        <button type="submit">Submit Premium Booking</button>
+    </form>
+</div>
+
     </section>
         
 <section class="gallery">
@@ -358,9 +412,27 @@ nav a {
         window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
     });
 </script>
+<script>
+    function showForm(formId) {
+        // forms
+        document.querySelectorAll('.booking-form').forEach(form => {
+            form.classList.remove('active');
+        });
+
+        // buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // activate selected
+        document.getElementById(formId).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
+
 
 
 
