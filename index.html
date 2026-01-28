@@ -323,30 +323,55 @@ nav a {
 </div>
 
 
-        <div id="premium" class="booking-form">
+      <div id="premium" class="booking-form">
+    <h3>Madaraka Express – Online Booking</h3>
+
     <form>
-        <label>Full Name</label>
-        <input type="text" required>
+        <!-- Trip type -->
+        <div class="trip-type">
+            <label>
+                <input type="radio" name="trip" checked>
+                One way
+            </label>
+            <label>
+                <input type="radio" name="trip">
+                Return trip
+            </label>
+        </div>
 
-        <label>Trip Type</label>
-        <select required>
-            <option>One Way</option>
-            <option>Return Trip</option>
+        <!-- Train type -->
+        <label>Train Type</label>
+        <select>
+            <option selected disabled>Select....</option>
+            <option>Madaraka Express</option>
+            <option>Premium Class</option>
         </select>
 
-        <label>Travel Route</label>
-        <select required>
-            <option>Nairobi – Mombasa</option>
-            <option>Mombasa – Nairobi</option>
+        <!-- From -->
+        <label>From</label>
+        <select>
+            <option selected disabled>Select...</option>
+            <option>Nairobi</option>
+            <option>Mombasa</option>
+            <option>Voi</option>
+            <option>Kibwezi</option>
         </select>
 
+        <!-- To -->
+        <label>To</label>
+        <select>
+            <option selected disabled>Select...</option>
+            <option>Mombasa</option>
+            <option>Nairobi</option>
+            <option>Voi</option>
+            <option>Kibwezi</option>
+        </select>
+
+        <!-- Departure date -->
         <label>Departure Date</label>
-        <input type="date" required>
-
-        <label>Return Date (if return)</label>
         <input type="date">
 
-        <button type="submit">Submit Premium Booking</button>
+        <button type="submit" class="book-btn">Book a Train</button>
     </form>
 </div>
 
@@ -432,6 +457,7 @@ nav a {
 
 </body>
 </html>
+
 
 
 
