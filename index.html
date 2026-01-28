@@ -333,25 +333,26 @@ nav a {
                 <!-- Trip type -->
                 <div class="trip-type">
                     <label>
-                        <input type="radio" name="trip" checked onclick="toggleReturn(false)">
+                        <input type="radio" name="trip" value="oneway" checked onclick="toggleReturn(false)">
                         One way
                     </label>
                     <label>
-                        <input type="radio" name="trip" onclick="toggleReturn(true)">
+                        <input type="radio" name="trip" value="return" onclick="toggleReturn(true)">
                         Return trip
                     </label>
                 </div>
 
+                <!-- COMMON FIELDS -->
                 <label>Train Type</label>
                 <select required>
-                    <option disabled selected>Select....</option>
+                    <option selected disabled>Select....</option>
                     <option>Madaraka Express</option>
                     <option>Premium Class</option>
                 </select>
 
                 <label>From</label>
                 <select required>
-                    <option disabled selected>Select...</option>
+                    <option selected disabled>Select...</option>
                     <option>Nairobi</option>
                     <option>Mombasa</option>
                     <option>Voi</option>
@@ -360,7 +361,7 @@ nav a {
 
                 <label>To</label>
                 <select required>
-                    <option disabled selected>Select...</option>
+                    <option selected disabled>Select...</option>
                     <option>Mombasa</option>
                     <option>Nairobi</option>
                     <option>Voi</option>
@@ -370,9 +371,15 @@ nav a {
                 <label>Departure Date</label>
                 <input type="date" required>
 
-                <!-- RETURN ONLY -->
-                <div id="returnFields" class="return-fields">
+                <!-- RETURN FIELDS -->
+                <div id="returnFields" style="display: none;">
                     <hr>
+                    <label>Return Train Type</label>
+                    <select>
+                        <option selected disabled>Select....</option>
+                        <option>Madaraka Express</option>
+                        <option>Premium Class</option>
+                    </select>
 
                     <label>Return Date</label>
                     <input type="date">
@@ -382,6 +389,25 @@ nav a {
             </form>
         </div>
 
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+    <div class="container">
+        <h2>Our Rail Experience</h2>
+        <div class="grid">
+            <div class="card"><img src="sgr1.jpeg"><p>State-of-the-art passenger trains.</p></div>
+            <div class="card"><img src="sgr2.jpeg"><p>Modern stations.</p></div>
+            <div class="card"><img src="sgr3.jpeg"><p>Onboard catering services.</p></div>
+            <div class="card"><img src="sgr4.jpeg"><p>Fast Nairobi–Mombasa connection.</p></div>
+            <div class="card"><img src="sgr5.jpeg"><p>Safe and secure travel.</p></div>
+            <div class="card"><img src="sgr6.jpeg"><p>Professional crew.</p></div>
+            <div class="card"><img src="sgr7.jpeg"><p>Modern stations.</p></div>
+            <div class="card"><img src="sgr8.jpeg"><p>Reliable schedules.</p></div>
+            <div class="card"><img src="sgr9.jpeg"><p>Clean coaches.</p></div>
+            <div class="card"><img src="sgr10.jpeg"><p>Nationwide connectivity.</p></div>
+        </div>
     </div>
 </section>
 
@@ -447,6 +473,7 @@ nav a {
 
 </body>
 </html>
+
 
 
 
