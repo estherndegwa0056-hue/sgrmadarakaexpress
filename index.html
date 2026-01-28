@@ -469,24 +469,6 @@ nav a {
         event.target.classList.add('active');
     }
 </script>
-<script>
-    function showForm(event, formId) {
-        // Hide all forms
-        document.querySelectorAll('.booking-form').forEach(f => f.classList.remove('active'));
-        // Remove active class from buttons
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        // Show selected form
-        document.getElementById(formId).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
-
-    function toggleReturn(show) {
-        document.getElementById("returnFields").style.display = show ? "block" : "none";
-    }
-
-    // hide return fields on page load
-    document.addEventListener("DOMContentLoaded", () => toggleReturn(false));
-</script>
 
 </body>
 </html>
