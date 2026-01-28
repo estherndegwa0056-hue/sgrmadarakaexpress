@@ -323,23 +323,23 @@ nav a {
 </div>
 
 
-      <div id="premium" class="booking-form">
+     <div id="premium" class="booking-form">
     <h3>Madaraka Express – Online Booking</h3>
 
     <form>
         <!-- Trip type -->
         <div class="trip-type">
             <label>
-                <input type="radio" name="trip" checked>
+                <input type="radio" name="trip" value="oneway" checked onclick="toggleReturn(false)">
                 One way
             </label>
             <label>
-                <input type="radio" name="trip">
+                <input type="radio" name="trip" value="return" onclick="toggleReturn(true)">
                 Return trip
             </label>
         </div>
 
-        <!-- Train type -->
+        <!-- ONE WAY / COMMON FIELDS -->
         <label>Train Type</label>
         <select>
             <option selected disabled>Select....</option>
@@ -347,7 +347,6 @@ nav a {
             <option>Premium Class</option>
         </select>
 
-        <!-- From -->
         <label>From</label>
         <select>
             <option selected disabled>Select...</option>
@@ -357,7 +356,6 @@ nav a {
             <option>Kibwezi</option>
         </select>
 
-        <!-- To -->
         <label>To</label>
         <select>
             <option selected disabled>Select...</option>
@@ -367,9 +365,23 @@ nav a {
             <option>Kibwezi</option>
         </select>
 
-        <!-- Departure date -->
         <label>Departure Date</label>
         <input type="date">
+
+        <!-- RETURN FIELDS (hidden by default) -->
+        <div id="returnFields" style="display: none;">
+            <hr>
+
+            <label>Train Type</label>
+            <select>
+                <option selected disabled>Select....</option>
+                <option>Madaraka Express</option>
+                <option>Premium Class</option>
+            </select>
+
+            <label>Return Date</label>
+            <input type="date">
+        </div>
 
         <button type="submit" class="book-btn">Book a Train</button>
     </form>
@@ -457,6 +469,7 @@ nav a {
 
 </body>
 </html>
+
 
 
 
