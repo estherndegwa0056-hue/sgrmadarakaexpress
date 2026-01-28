@@ -18,41 +18,49 @@
         }
 
         /* ================= HEADER (TRANSLUCENT) ================= */
-      header {
+ header {
     background: rgba(177, 18, 38, 0.85);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     color: white;
-    padding: 16px 24px;           /* reduced */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 16px 24px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between; /* heading left, nav right */
+    justify-content: space-between;
+
+    transition: all 0.3s ease;
+}
+
+/* Fixed after first scroll */
+header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .branding .tagline {
     margin: 0;
-    font-size: 20px;              /* reduced to fit one line */
+    font-size: 20px;
     font-weight: 600;
 }
 
 nav {
-    margin-top: 0;                /* remove stacking */
     display: flex;
-    align-items: center;
 }
 
 nav a {
     color: white;
-    margin-left: 18px;            /* spacing between tabs */
+    margin-left: 18px;
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
-    font-size: 16px;              /* reduced */
+    font-size: 16px;
 }
+
 
         section {
             padding: 70px 20px;
@@ -226,7 +234,7 @@ nav a {
 
 <body>
 
-<header>
+<header id="mainHeader">
     <div class="branding">
         <p class="tagline">Kenya Railways — Right on Track</p>
     </div>
@@ -352,6 +360,7 @@ nav a {
 
 </body>
 </html>
+
 
 
 
