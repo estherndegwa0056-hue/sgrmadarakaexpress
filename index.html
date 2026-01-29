@@ -296,114 +296,130 @@ footer {
 </section>
 
 <section id="booking" class="booking">
-    <div class="container">
+  <div class="container">
 
-        <!-- Tabs -->
-<div class="booking-tabs">
-    <button class="tab-btn active" onclick="showForm(event,'madaraka')">
-        <i class='bx bx-train'></i> Madaraka Express
-    </button>
+    <!-- Tabs -->
+    <div class="booking-tabs">
+        <button class="tab-btn active" onclick="showForm(event,'madaraka')">
+            <i class='bx bx-train'></i> Madaraka Express
+        </button>
 
-    <button class="tab-btn" onclick="showForm(event,'premium')">
-        <i class='bx bx-crown'></i> Book Premium
-    </button>
-</div>
+        <button class="tab-btn" onclick="showForm(event,'premium')">
+            <i class='bx bx-crown'></i> Book Premium
+        </button>
+    </div>
 
-        <!-- Madaraka Form -->
-        <div id="madaraka" class="booking-form active">
-            <form id="bookingForm">
-                <label>Full Name</label>
-                <input type="text" id="name" required>
+    <!-- Madaraka Form -->
+    <div id="madaraka" class="booking-form active">
+        <form id="bookingForm">
+            <label>Full Name</label>
+            <input type="text" required>
 
-                <label>Travel Route</label>
-                <select id="route" required>
-                    <option>Nairobi – Mombasa</option>
-                    <option>Mombasa – Nairobi</option>
-                    <option>Nairobi – Kisumu</option>
-                    <option>Mombasa – Voi</option>
-                    <option>Nairobi – Kibwezi</option>
-                    <option>Mombasa – Kibwezi</option>
-                    <option>Nairobi – Voi</option>
-                </select>
+            <label>Travel Route</label>
+            <select required>
+                <option selected disabled>Select route...</option>
+                <option>Nairobi Terminus – Mombasa Terminus</option>
+                <option>Mombasa Terminus – Nairobi Terminus</option>
+                <option>Nairobi Terminus – Kisumu</option>
+                <option>Nairobi Terminus – Voi</option>
+                <option>Nairobi Terminus – Kibwezi</option>
+                <option>Mombasa Terminus – Voi</option>
+                <option>Mombasa Terminus – Mariakani</option>
+            </select>
 
-                <label>Travel Date</label>
-                <input type="date" id="date" required>
+            <label>Travel Date</label>
+            <input type="date" required>
 
-                <label>Class</label>
-                <select id="class" required>
-                    <option>Economy</option>
-                    <option>First Class</option>
-                </select>
+            <label>Class</label>
+            <select required>
+                <option>Economy</option>
+                <option>First Class</option>
+            </select>
 
-                <button type="submit">Submit Booking</button>
-            </form>
-        </div>
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
 
-        <!-- Premium Form -->
-        <div id="premium" class="booking-form">
-            <h3>Madaraka Express – Online Booking</h3>
-            <form>
-                <label>Full Name</label>
-                <input type="text" required>
+    <!-- Premium Form -->
+    <div id="premium" class="booking-form">
+        <h3>Madaraka Express – Online Booking</h3>
 
-                <!-- Trip Type -->
-                <div class="trip-type" style="margin-top: 10px; margin-bottom: 15px;">
-                    <label>
-                        <input type="radio" name="trip" checked onclick="toggleReturn(false)"> One way
-                    </label>
-                    <label style="margin-left: 15px;">
-                        <input type="radio" name="trip" onclick="toggleReturn(true)"> Return trip
-                    </label>
-                </div>
+        <form>
+            <label>Full Name</label>
+            <input type="text" required>
 
-                <!-- Common Fields -->
-                <label>Train Type</label>
+            <!-- Trip Type -->
+            <div class="trip-type" style="margin: 10px 0 15px;">
+                <label>
+                    <input type="radio" name="trip" checked onclick="toggleReturn(false)"> One way
+                </label>
+                <label style="margin-left: 15px;">
+                    <input type="radio" name="trip" onclick="toggleReturn(true)"> Return trip
+                </label>
+            </div>
+
+            <!-- Train Type -->
+            <label>Train Type</label>
+            <select required>
+                <option selected disabled>Select...</option>
+                <option>Madaraka Express</option>
+                <option>Premium Class</option>
+            </select>
+
+            <!-- FROM -->
+            <label>From</label>
+            <select required>
+                <option selected disabled>Select departure station...</option>
+                <option>Nairobi Terminus</option>
+                <option>Mombasa Terminus</option>
+                <option>Voi</option>
+                <option>Kisumu</option>
+                <option>Emali</option>
+                <option>Mtito Andei</option>
+                <option>Kibwezi</option>
+                <option>Athi River</option>
+                <option>Mariakani</option>
+            </select>
+
+            <!-- TO -->
+            <label>To</label>
+            <select required>
+                <option selected disabled>Select destination station...</option>
+                <option>Nairobi Terminus</option>
+                <option>Mombasa Terminus</option>
+                <option>Voi</option>
+                <option>Mtito Andei</option>
+                <option>Kisumu</option>
+                <option>Emali</option>
+                <option>Kibwezi</option>
+                <option>Mariakani</option>
+                <option>Suswa</option>
+            </select>
+
+            <label>Departure Date</label>
+            <input type="date" required>
+
+            <!-- Return Fields -->
+            <div id="returnFields" style="display: none;">
+                <hr>
+
+                <label>Return Train Type</label>
                 <select required>
-                    <option selected disabled>Select....</option>
+                    <option selected disabled>Select...</option>
                     <option>Madaraka Express</option>
                     <option>Premium Class</option>
                 </select>
 
-                <label>From</label>
-                <select required>
-                    <option selected disabled>Select...</option>
-                    <option>Nairobi</option>
-                    <option>Mombasa</option>
-                    <option>Voi</option>
-                    <option>Kibwezi</option>
-                </select>
-
-                <label>To</label>
-                <select required>
-                    <option selected disabled>Select...</option>
-                    <option>Mombasa</option>
-                    <option>Nairobi</option>
-                    <option>Voi</option>
-                    <option>Kibwezi</option>
-                </select>
-
-                <label>Departure Date</label>
+                <label>Return Date</label>
                 <input type="date" required>
+            </div>
 
-                <!-- Return Fields -->
-                <div id="returnFields" style="display: none;">
-                    <hr>
-                    <label>Train Type</label>
-                    <select required>
-                        <option selected disabled>Select....</option>
-                        <option>Madaraka Express</option>
-                        <option>Premium Class</option>
-                    </select>
-
-                    <label>Return Date</label>
-                    <input type="date" required>
-                </div>
-
-                <button type="submit">Book a Train</button>
-            </form>
-        </div>
-
+            <button type="submit">Book a Train</button>
+        </form>
     </div>
+
+</div>
+
 </section>
 
 <section class="gallery">
